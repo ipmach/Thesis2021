@@ -1,0 +1,67 @@
+{
+  "Datasets": {
+    "MNIST-C": {
+      "x_file": "/res/MNIST-C_x",
+      "y_file": "/res/MNIST-C_y"
+    },
+    "CIFAR10-C": {
+      "x_file": "/res/cifar10-C_x_",
+      "y_file": "/res/cifar10-C_y_"
+    },
+    "SVHN": {
+      "x_file": "/res/svhn_cropped_x",
+      "y_file": "/res/svhn_cropped_y",
+      "apply_gray": 0
+    },
+    "CIFAR10": {
+      "apply_gray": 0
+    }
+  },
+  "Model": {
+    "size_use": 0,
+    "sizes": [
+      [28, 28, 1], [32, 32, 3]
+    ],
+    "decoder_cnn": [
+      {
+        "channels_last": 1, "padding_last" : "valid"
+      },
+      {
+        "channels_last": 3, "padding_last" : "same"
+      }
+    ]
+  },
+  "Train_script": {
+    "do_epochs_fix": 0,
+    "fix_epochs": 168,
+    "do_ood": 0,
+    "save_images": 20
+  },
+  "OOD": {
+    "batch_size": 200,
+    "ood_size": 2000,
+    "id_test_size": 0,
+    "id_train_size": 2000,
+    "Gather_Data": {
+      "Choose_set": 0,
+      "Set_DataSets": [
+        {
+          "ID": "MNIST",
+          "OOD": [
+            "FashionMnist", "MNIST-C"
+          ]
+        },
+        {
+          "ID": "cifar10",
+          "OOD": [
+            "svhn_cropped", "cifar10-C"
+          ]
+        }
+      ],
+      "Feature_methods": [
+        "Likehood", "Disc", "Mahalanobis", "LogNormLikelihood"
+      ],
+      "Reconstruction": "BinaryCross"
+    }
+  }
+}
