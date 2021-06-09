@@ -142,7 +142,7 @@ A model can be trained with different Train classes. Each training class is a co
   @abstractmethod
   def do_epoch(self, dataset): pass
 ````
-![Graph](https://github.com/ipmach/Interpolation/blob/main/Documentation/AE_class.png)
+![Graph](https://github.com/ipmach/Thesis2021/blob/main/Documentation/AE_class.png)
 
 ### Docker Compatibility
 
@@ -159,4 +159,4 @@ The different executions where design to be run in Docker Containers.
 
 ### General Structure
 
-![Graph](https://github.com/ipmach/Interpolation/blob/main/Documentation/Modules.png)
+![Graph](https://github.com/ipmach/Thesis2021/blob/main/Documentation/Modules.png)
