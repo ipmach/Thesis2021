@@ -7,6 +7,7 @@ class VAE(AE):
     def __init__(self, dim, **kwargs):
         """
         Wrapper for the Varational AutoEncoder (VAE)
+        Inspired from: Deep Learning with Tensorflow 2 and Keras book
         :param dim: hyperparameters of the model [h_dim, z_dim, real_dim]
         :param num_labels: Number of labels for regularization
         :param dropout: Noise dropout [0,1]

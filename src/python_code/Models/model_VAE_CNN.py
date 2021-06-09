@@ -6,6 +6,11 @@ import tensorflow as tf
 class VAECNN(AE_CNN):
 
     def __init__(self, filters, z_dim):
+        """
+        Inspired from: Deep Learning with Tensorflow 2 and Keras book
+        :param filters:
+        :param z_dim:
+        """
         super(VAECNN, self).__init__(filters, z_dim)
         self.fc1 = tf.keras.layers.Dense(self.z_dim)
         self.fc3 = tf.keras.layers.Dense(z_dim)
